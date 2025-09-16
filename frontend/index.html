@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAG Chat (HF)</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="chat-wrap">
+    <header class="chat-header">
+      <div class="title">RAG Chat <span class="muted">· Hugging Face</span></div>
+      <div class="status" id="status">conectando…</div>
+    </header>
+
+    <main id="messages" class="chat-body">
+      <!-- mensagens aparecem aqui -->
+    </main>
+
+    <footer class="chat-input">
+      <form id="msgForm">
+        <input id="msg" type="text" placeholder="Envie uma mensagem…" autocomplete="off" />
+        <button id="sendBtn" type="submit" title="Enviar">Enviar</button>
+      </form>
+      <div class="hint">Cole texto longo para adicioná-lo ao contexto. Mensagens curtas viram perguntas.</div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
