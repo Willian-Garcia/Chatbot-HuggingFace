@@ -2,30 +2,46 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RAG Chat (HF)</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RAG Chat</title>
+  <link rel="stylesheet" href="./styles.css"/>
 </head>
 <body>
   <div class="chat-wrap">
     <header class="chat-header">
-      <div class="title">RAG Chat <span class="muted">· Hugging Face</span></div>
+      <div class="title">RAG Chat <span class="muted">· API + Frontend</span></div>
       <div class="status" id="status">conectando…</div>
     </header>
 
-    <main id="messages" class="chat-body">
-      <!-- mensagens aparecem aqui -->
-    </main>
+    <main id="chat" class="chat-body"></main>
 
     <footer class="chat-input">
-      <form id="msgForm">
-        <input id="msg" type="text" placeholder="Envie uma mensagem…" autocomplete="off" />
-        <button id="sendBtn" type="submit" title="Enviar">Enviar</button>
+      <form id="msgForm" class="input-bar" autocomplete="off">
+        <div class="input-wrap">
+          <span class="input-icon" aria-hidden="true">💬</span>
+          <input id="userInput" type="text" placeholder="Digite sua pergunta…" autocomplete="off"/>
+        </div>
+
+        <div class="actions">
+          <button id="loadBtn" type="button" class="btn btn--outline" title="Carregar .txt">
+            <span class="btn-ico" aria-hidden="true">📄</span><span class="btn-txt">Carregar</span>
+          </button>
+
+          <button id="clearBtn" type="button" class="btn btn--ghost" title="Limpar histórico/contexto">
+            <span class="btn-ico" aria-hidden="true">🧹</span><span class="btn-txt">Limpar</span>
+          </button>
+
+          <button id="sendBtn" type="submit" class="btn btn--primary" title="Enviar">
+            <span class="btn-ico" aria-hidden="true">➤</span><span class="btn-txt">Enviar</span>
+          </button>
+        </div>
+
+        <input id="fileInput" type="file" accept=".txt" multiple style="display:none"/>
       </form>
-      <div class="hint">Cole texto longo para adicioná-lo ao contexto. Mensagens curtas viram perguntas.</div>
+
+      <div class="hint">Se já houver cache, pode perguntar direto. Ou carregue .txt para adicionar contexto.</div>
     </footer>
   </div>
-
   <script src="./script.js"></script>
 </body>
 </html>

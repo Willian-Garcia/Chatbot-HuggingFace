@@ -3,4 +3,7 @@ uvicorn
 sentence-transformers
 faiss-cpu
 requests
+numpy
 python-dotenv
+transformers
+torch

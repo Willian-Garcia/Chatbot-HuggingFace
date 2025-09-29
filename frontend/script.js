@@ -1,119 +1,85 @@
-// Simple chat client for RAG backend (no explicit modes)
-// Heuristic: long or multi-paragraph input -> ingest; otherwise -> ask
-// Backend base URL (adjust if needed)
-const BASE_URL = "http://localhost:8000";
-
-const $ = (sel) => document.querySelector(sel);
-const messagesEl = $("#messages");
+const $ = (s) => document.querySelector(s);
+const chat = $("#chat");
+const input = $("#userInput");
+const sendBtn = $("#sendBtn");
+const clearBtn = $("#clearBtn");
 const statusEl = $("#status");
-const form = $("#msgForm");
-const input = $("#msg");
+const fileBtn = $("#loadBtn");
+const fileInput = $("#fileInput");
 
-let typingEl = null;
-
+// ping de saúde
 async function ping() {
   try {
-    const res = await fetch(BASE_URL + "/ask", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question: "ping", k: 1 }),
-    });
-    statusEl.textContent = res.ok ? "pronto" : "offline";
-  } catch {
+    const r = await fetch("/health");
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    await r.json();
+    statusEl.textContent = "pronto";
+  } catch (e) {
     statusEl.textContent = "offline";
   }
 }
 ping();
 
-function addMsg(text, who = "assist") {
+function appendMsg(who, text) {
   const div = document.createElement("div");
-  div.className = "msg " + (who === "user" ? "user" : "assist");
+  div.className = who === "user" ? "msg user" : "msg assist";
   div.textContent = text;
-  messagesEl.appendChild(div);
-  messagesEl.scrollTop = messagesEl.scrollHeight;
-  return div;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
 }
 
-function addTyping() {
-  if (typingEl) return typingEl;
-  typingEl = document.createElement("div");
-  typingEl.className = "msg assist typing";
-  typingEl.textContent = "digitando…";
-  messagesEl.appendChild(typingEl);
-  messagesEl.scrollTop = messagesEl.scrollHeight;
-  return typingEl;
-}
-
-function removeTyping() {
-  if (typingEl) {
-    typingEl.remove();
-    typingEl = null;
-  }
-}
-
-function isIngest(text) {
-  // Heurística simples: texto muito longo ou vários parágrafos
-  const tooLong = text.length > 280;
-  const manyBreaks = (text.match(/\n/g) || []).length >= 2;
-  return tooLong || manyBreaks;
-}
-
-async function sendIngest(text) {
-  const res = await fetch(BASE_URL + "/ingest", {
+async function ask(question) {
+  const r = await fetch("/ask", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ text }),
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({ question, k: 3 })
   });
-  const data = await res.json();
-  return data;
+  if (!r.ok) throw new Error("HTTP " + r.status);
+  return r.json();
 }
 
-async function sendAsk(question) {
-  const res = await fetch(BASE_URL + "/ask", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ question, k: 3 }),
-  });
-  const data = await res.json();
-  return data;
-}
-
-form.addEventListener("submit", async (e) => {
+$("#msgForm").addEventListener("submit", async (e) => {
   e.preventDefault();
-  const text = input.value.trim();
-  if (!text) return;
-
-  addMsg(text, "user");
+  const q = input.value.trim();
+  if (!q) return;
+  appendMsg("user", q);
   input.value = "";
 
-  addTyping();
   try {
-    if (isIngest(text)) {
-      const data = await sendIngest(text);
-      removeTyping();
-      addMsg(`Adicionado ao contexto. Total de docs: ${data?.total_docs ?? "?"}`);
-    } else {
-      const data = await sendAsk(text);
-      removeTyping();
-      const answer = data?.answer || "(sem resposta)";
-      addMsg(answer, "assist");
-
-      if (Array.isArray(data?.retrieved) && data.retrieved.length) {
-        const ctx = data.retrieved
-          .map((r, i) => `#${i+1} (score ${Number(r.score).toFixed(3)}):\n${r.text}`)
-          .join("\n\n—\n\n");
-        const note = document.createElement("div");
-        note.className = "msg assist small";
-        const pre = document.createElement("pre");
-        pre.className = "code";
-        pre.textContent = ctx;
-        note.appendChild(pre);
-        messagesEl.appendChild(note);
-        messagesEl.scrollTop = messagesEl.scrollHeight;
-      }
-    }
+    const data = await ask(q);
+    appendMsg("assist", data?.answer || "⚠️ Sem resposta.");
   } catch (err) {
-    removeTyping();
-    addMsg("Erro: " + err, "assist");
+    appendMsg("assist", "❌ Erro: " + err.message);
   }
+});
+
+clearBtn.addEventListener("click", async () => {
+  try {
+    await fetch("/clear", { method: "POST" });
+    chat.innerHTML = "";
+    appendMsg("assist", "🧹 Memória limpa.");
+  } catch {
+    appendMsg("assist", "❌ Erro ao limpar.");
+  }
+});
+
+fileBtn.addEventListener("click", ()=> fileInput.click());
+fileInput.addEventListener("change", async (e) => {
+  const files = Array.from(e.target.files || []);
+  if (!files.length) return;
+  appendMsg("assist", `Carregando ${files.length} arquivo(s) .txt…`);
+  let ok = 0;
+  for (const f of files) {
+    const text = await f.text();
+    if (text?.trim()) {
+      await fetch("/ingest", {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({ text })
+      });
+      ok++;
+    }
+  }
+  appendMsg("assist", `✅ Ingestão concluída: ${ok}/${files.length}.`);
+  fileInput.value = "";
 });
