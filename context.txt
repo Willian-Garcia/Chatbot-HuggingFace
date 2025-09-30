@@ -1,89 +1,15 @@
-================ CONTEXTO CURSO DSM – FATEC =================
+Nome do curso: Curso Superior de Tecnologia em Desenvolvimento de Software Multiplataforma (DSM). Tipo: Tecnólogo. Instituição: Faculdades de Tecnologia (Fatec), Centro Estadual de Educação Tecnológica Paula Souza – CEETEPS. Eixo Tecnológico: Informação e Comunicação.
 
-Nome do curso:
-Curso Superior de Tecnologia em Desenvolvimento de Software Multiplataforma (DSM)  
-Tipo: Tecnólogo  
+Modalidade: Presencial, com parte das aulas remotas em algumas unidades (modelo híbrido, especialmente no último semestre). Duração: 6 semestres (3 anos). Carga horária total: cerca de 2.400 horas de disciplinas e aulas, mais 240 horas de estágio supervisionado, totalizando aproximadamente 2.640 horas.
 
-Instituição:
-Faculdades de Tecnologia – Fatec (Centro Estadual de Educação Tecnológica Paula Souza – CEETEPS)  
+Número de vagas: cerca de 40 vagas por semestre em várias Fatecs. Turnos: matutino, vespertino ou noturno, dependendo da unidade. Formas de ingresso: Vestibular Fatec (duas vezes ao ano, com provas e redação), além de transferências ou vagas remanescentes.
 
-Eixo Tecnológico:
-Informação e Comunicação :contentReference[oaicite:0]{index=0}
+Objetivo: formar profissionais capazes de projetar, desenvolver e testar softwares multiplataforma (Web, Desktop, Mobile, Nuvem, IoT). Abrange Engenharia de Software, Segurança da Informação, Inteligência Artificial, metodologias ágeis, versionamento, integração e entrega contínua de software.
 
-Modalidade:
-Presencial, com parte das aulas remotas em algumas unidades (modelo híbrido, especialmente no último semestre). :contentReference[oaicite:1]{index=1}
+Perfil do egresso: o tecnólogo DSM será capaz de desenvolver aplicações para diferentes plataformas, selecionar linguagens adequadas, realizar testes, garantir qualidade e segurança, trabalhar em equipe, ter comunicação eficaz, raciocínio lógico, inovação, ética e responsabilidade socioambiental. Também aplicará gestão de projetos, versionamento, integração e entrega contínua.
 
-Duração:
-6 semestres (3 anos) :contentReference[oaicite:2]{index=2}  
+Matriz curricular inclui: Algoritmos e Lógica de Programação, Desenvolvimento Web I, II, III, Modelagem e Bancos de Dados Relacionais e Não-Relacionais, Estrutura de Dados, Sistemas Operacionais e Redes, Programação Mobile I e II, Internet das Coisas, Computação em Nuvem I e II, UX, Design Digital, Interação Humano-Computador, Qualidade e Testes, Integração Contínua e Inglês Técnico.
 
-Carga horária total:
-- Disciplinas + aulas: cerca de **2.400 horas** de componentes curriculares (≈ 2.880 aulas de 50 minutos) :contentReference[oaicite:3]{index=3}  
-- Estágio curricular supervisionado: cerca de **240 horas** :contentReference[oaicite:4]{index=4}  
-- Total incluindo estágio: ~ **2.640 horas** :contentReference[oaicite:5]{index=5}
+Avaliação: contempla certificações intermediárias e microcertificações, como Desenvolvedor Front-End, Back-End e Mobile. O aluno constrói um portfólio digital com projetos dos semestres finais e TCC. Prazo mínimo: 6 semestres (3 anos). Prazo máximo: até 10 semestres, dependendo das regras internas da unidade.
 
-Número de vagas e turnos:
-- Normalmente ~ **40 vagas por semestre** em muitas Fatecs que oferecem esse curso. :contentReference[oaicite:6]{index=6}  
-- Turno varia: alguns cursos são matutinos, vespertinos ou noturnos dependendo da unidade. :contentReference[oaicite:7]{index=7}  
-
-Formas de ingresso:
-- Processo Seletivo Vestibular da Fatec (provas, com redação, etc.) normalmente duas vezes ao ano. :contentReference[oaicite:8]{index=8}  
-- Possibilidade também de vagas remanescentes ou transferências, dependendo da unidade. :contentReference[oaicite:9]{index=9}  
-
-Objetivo do curso:
-Formar profissionais capacitados para projetar, desenvolver, testar softwares para múltiplas plataformas (Web, Desktop, Dispositivos Móveis), aplicações em nuvem e Internet das Coisas (IoT), empregando conceitos como:  
-- Engenharia de Software :contentReference[oaicite:10]{index=10}  
-- Segurança da Informação :contentReference[oaicite:11]{index=11}  
-- Inteligência Artificial :contentReference[oaicite:12]{index=12}  
-- Metodologias ágeis, versionamento, integração e entrega contínua de software :contentReference[oaicite:13]{index=13}  
-
-Perfil do egresso / competências esperadas:
-O formando deverá ser capaz de:  
-- Desenvolver softwares para diferentes plataformas (web, desktop, mobile, nuvem, IoT) :contentReference[oaicite:14]{index=14}  
-- Selecionar e aplicar tecnologias e linguagens de programação adequadas :contentReference[oaicite:15]{index=15}  
-- Realizar testes, garantir qualidade e segurança das aplicações :contentReference[oaicite:16]{index=16}  
-- Trabalhar em equipe, comunicação, raciocínio lógico, capacidade de inovação, postura ética e responsabilidade social e ambiental :contentReference[oaicite:17]{index=17}  
-- Aplicar métodos de gestão de projetos, versionamento, integração e entrega contínua de software :contentReference[oaicite:18]{index=18}  
-
-Matriz curricular / principais disciplinas:
-Algumas disciplinas típicas presentes no curso incluem (podem variar por Fatec/unidade):
-
-- Algoritmos e Lógica de Programação :contentReference[oaicite:19]{index=19}  
-- Desenvolvimento Web I, II, III :contentReference[oaicite:20]{index=20}  
-- Modelagem de Banco de Dados / Banco de Dados Relacional e Não-Relacional :contentReference[oaicite:21]{index=21}  
-- Estrutura de Dados :contentReference[oaicite:22]{index=22}  
-- Sistemas Operacionais e Redes de Computadores :contentReference[oaicite:23]{index=23}  
-- Programação para Dispositivos Móveis I e II :contentReference[oaicite:24]{index=24}  
-- Internet das Coisas e Aplicações :contentReference[oaicite:25]{index=25}  
-- Computação em Nuvem I e II :contentReference[oaicite:26]{index=26}  
-- Experiência do Usuário (UX), Design Digital, Design de Interação Humano-Computador :contentReference[oaicite:27]{index=27}  
-- Qualidade e Testes de Software :contentReference[oaicite:28]{index=28}  
-- Integração e Entrega Contínua :contentReference[oaicite:29]{index=29}  
-- Inglês Técnico / Língua Estrangeira :contentReference[oaicite:30]{index=30}  
-
-Avaliação e certificações intermediárias:
-- O curso contempla **microcertificações** e **certificações intermediárias** que visam identificar e comunicar habilidades específicas ao mercado ao longo da formação. Exemplos: Desenvolvedor Front-End, Back-End, Mobile, etc. :contentReference[oaicite:31]{index=31}  
-- Portfólio digital do aluno ao longo do curso que abriga os projetos dos semestres finais e trabalhos de graduação. :contentReference[oaicite:32]{index=32}  
-
-Prazo de integralização:
-- Prazo mínimo: 6 semestres (3 anos) :contentReference[oaicite:33]{index=33}  
-- Prazo máximo: geralmente 1,5 vezes o mínimo mais um semestre – ou seja, até ~10 semestres em algumas unidades, dependendo de regulamentos internos. :contentReference[oaicite:34]{index=34}  
-
-Mercado de trabalho / atuação profissional:
-O tecnólogo em DSM pode atuar em:
-
-- Empresas de TIC dos mais diversos ramos: desenvolvimento de software, consultoria, startups, indústria, varejo, serviços, financeiro. :contentReference[oaicite:35]{index=35}  
-- Setores público e privado; órgãos públicos; ONGs; instituições de pesquisa. :contentReference[oaicite:36]{index=36}  
-- Atuação autônoma ou empreendimento próprio. :contentReference[oaicite:37]{index=37}  
-
-Outros aspectos relevantes:
-
-- O curso é gratuito (Fatec é pública, sem mensalidade). :contentReference[oaicite:38]{index=38}  
-- Unidades têm infraestrutura de laboratórios, salas de aula com equipamentos para desenvolvimento, hardware IoT, redes etc. :contentReference[oaicite:39]{index=39}  
-- Enfoque prático: projetos, laboratórios, resolução de problemas reais, aprendizagem baseada em projetos e uso de metodologias ágeis. :contentReference[oaicite:40]{index=40}  
-
-Fontes principais:
-- Página oficial do curso no Vestibular Fatec :contentReference[oaicite:41]{index=41}  
-- Projetos Pedagógicos de Curso (PPC) da Fatec SJC, Zona Sul etc. :contentReference[oaicite:42]{index=42}  
-- Sites institucionais de unidades Fatec que oferecem o curso como Fatec Franco da Rocha, Fatec Franca etc. :contentReference[oaicite:43]{index=43}  
-
-=============================================================
+Mercado de trabalho: o tecnólogo em DSM atua em empresas de tecnologia, consultoria, startups, indústrias, serviços e setor financeiro. Também pode trabalhar em órgãos públicos, ONGs, pesquisa ou como autônomo/empreendedor. Curso gratuito, com infraestrutura de laboratórios, equipamentos para desenvolvimento, IoT e redes. Enfoque prático em projetos, resolução de problemas reais e metodologias ágeis.

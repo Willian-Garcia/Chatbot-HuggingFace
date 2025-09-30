@@ -1,47 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RAG Chat</title>
-  <link rel="stylesheet" href="./styles.css"/>
-</head>
-<body>
-  <div class="chat-wrap">
-    <header class="chat-header">
-      <div class="title">RAG Chat <span class="muted">· API + Frontend</span></div>
-      <div class="status" id="status">conectando…</div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>RAG Chat</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">RAG Chat</div>
+      <div class="top-actions">
+        <button id="modeBtn" class="mode-btn" title="Alternar método">
+          Modo: Auto
+        </button>
+        <div class="status" id="status">conectando…</div>
+      </div>
     </header>
 
-    <main id="chat" class="chat-body"></main>
+    <main>
+      <div id="messages" class="messages">
+        <!-- mensagem de boas-vindas opcional -->
+        <div class="msg-row assist">
+          <div class="avatar">🤖</div>
+          <div class="bubble assist">
+            Olá! Envie sua pergunta abaixo. Clique em <b>Carregar</b> para
+            cadastrar uma Pergunta/Resposta no Q&A.
+            <div class="meta">agora</div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <footer class="chat-input">
-      <form id="msgForm" class="input-bar" autocomplete="off">
-        <div class="input-wrap">
-          <span class="input-icon" aria-hidden="true">💬</span>
-          <input id="userInput" type="text" placeholder="Digite sua pergunta…" autocomplete="off"/>
-        </div>
-
-        <div class="actions">
-          <button id="loadBtn" type="button" class="btn btn--outline" title="Carregar .txt">
-            <span class="btn-ico" aria-hidden="true">📄</span><span class="btn-txt">Carregar</span>
-          </button>
-
-          <button id="clearBtn" type="button" class="btn btn--ghost" title="Limpar histórico/contexto">
-            <span class="btn-ico" aria-hidden="true">🧹</span><span class="btn-txt">Limpar</span>
-          </button>
-
-          <button id="sendBtn" type="submit" class="btn btn--primary" title="Enviar">
-            <span class="btn-ico" aria-hidden="true">➤</span><span class="btn-txt">Enviar</span>
-          </button>
-        </div>
-
-        <input id="fileInput" type="file" accept=".txt" multiple style="display:none"/>
+      <!-- Form do Chat (padrão) -->
+      <form id="msgForm">
+        <input
+          id="userInput"
+          type="text"
+          placeholder="Digite sua pergunta…"
+          autocomplete="off"
+        />
+        <button id="sendBtn" type="submit" title="Enviar">Enviar</button>
+        <!-- Fluxo antigo: carregar .txt para /ingest -->
+        <button id="clearBtn" type="button" title="Limpar">🧹</button>
+        <button id="txtBtn" type="button" title="Carregar .txt">
+          Carregar .txt
+        </button>
+        <input
+          id="fileInput"
+          type="file"
+          accept=".txt"
+          multiple
+          style="display: none"
+        />
       </form>
 
-      <div class="hint">Se já houver cache, pode perguntar direto. Ou carregue .txt para adicionar contexto.</div>
+      <!-- Q&A (oculto) -->
+      <form id="qaForm" class="hidden">
+        <div class="qa-row">
+          <label for="qaQuestion">Pergunta</label>
+          <input
+            id="qaQuestion"
+            type="text"
+            placeholder="Escreva a pergunta…"
+            autocomplete="off"
+          />
+        </div>
+        <div class="qa-row">
+          <label for="qaAnswer">Resposta</label>
+          <textarea
+            id="qaAnswer"
+            rows="3"
+            placeholder="Escreva a resposta…"
+          ></textarea>
+        </div>
+        <div class="qa-actions">
+          <button id="qaSaveBtn" type="button">Salvar Q&A</button>
+          <button id="qaBackBtn" type="button" class="ghost">
+            Voltar ao chat
+          </button>
+        </div>
+      </form>
     </footer>
-  </div>
-  <script src="./script.js"></script>
-</body>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
